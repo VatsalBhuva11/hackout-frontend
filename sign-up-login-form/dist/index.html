@@ -19,16 +19,23 @@
 	<div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="signup">
-				<form method="post" enctype="multipart/form-data">
-					<label style="color: #5f488a;" for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<input type="file"  name="degree" placeholder="add file" required="true">
-					<button>Sign up</button>
-				</form>
-			</div>
+        <div class="signup" style="overflow: scroll">
+            <form action="http://localhost:5000/api/doctor/auth/signup" method="POST" enctype="multipart/form-data">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="name" placeholder="Name" required="">
+                <input type="date" name="DOB" placeholder="DOB" required="">
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="password" placeholder="Password" required="">
+                <input type="text" name="gender" placeholder="Gender" required="">
+                <input type="text" name="countryOfOrigin" placeholder="Country of Origin" required="">
+                <input type="text" name="contact" placeholder="Contact" required="">
+                <input type="text" name="specialization" placeholder="specialization" required="">
+                <input type="file" name="medicalLicense" required="">
+                <input type="file" name="degree" required="">
+                <input type="file" name="identityProof" required="">
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
 
 			<div class="login">
 				<form>
