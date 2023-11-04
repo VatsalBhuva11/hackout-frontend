@@ -84,6 +84,7 @@ button:hover{
 
 #chk:checked ~ .login{
 	transform: translateY(-730px);
+	scroll-behavior: auto;
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	
