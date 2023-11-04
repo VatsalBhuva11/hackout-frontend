@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Post</h1>
+        <div class="input-container">
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title">
+        </div>
+        <div class="input-container">
+            <label for="post-content">Content:</label>
+            <textarea id="post-content"></textarea>
+        </div>
+        <button id="post-button">Post</button>
+
+        <div class="comment-section" id="comment-section">
+            <h2>Comments</h2>
+            <input type="text" id="comment-input" placeholder="Add a comment">
+            <button id="comment-button">Comment</button>
+            <button id="redirect-button">Redirect</button>
+            <div class="comment-list" id="comment-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

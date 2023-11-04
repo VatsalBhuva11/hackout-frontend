@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Page</title>
+</head>
+<body>
+  <h1>Admin Page</h1>
+  
+  <div>
+    <p id="name">Name: <span>sadjfmsa</span>      Link1=<a></a>      Link2=<a></a>        Link3=<a></a> <button id="verifyButton">Verify</button></p>
+    
+  </div>
+
+
+
+  <script>
+    document.getElementById("verifyButton").addEventListener("click", function() {
+      // Change the text of the button to "VERIFIED"
+      const verifyButton = document.getElementById("verifyButton");
+      verifyButton.textContent = "VERIFIED";
+
+      // Add a class to style the button as green
+      verifyButton.classList.add("verified");
+      
+      // Disable the button to prevent further clicks
+      verifyButton.disabled = true;
+    });
+  </script>
+</body>
+</html>
