@@ -10,16 +10,55 @@
     <div class="container">
         <h1>D2P Model User Page</h1>
         <div class="post-form">
-            <form action="https://d2p-hackout23.onrender.com/api/patient/prompt" method="POST">
+            <form id="apiForm">
                 <input type="text" id="post-input" name="prompt" placeholder="What's happened?"></input>
                 <button id="post-button" type="submit">Prompt</button>
             </form>
         </div>
+        <div id="result">
+
+        </div>
+        
         <div id="post-list"></div>
 
     </div>
     
     
-    <script src="/js/user-dashboard.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const apiForm = document.getElementById("apiForm");
+            const apiEndpointInput = document.getElementById("prompt");
+            const resultDiv = document.getElementById("result");
+
+            apiForm.addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const apiEndpoint = apiEndpointInput.value;
+                
+                try {
+                    const response = await fetch(
+                        "https://hackout-ml-model.onrender.com/output",
+                        {
+                            method: "GET",
+                            body: {prompt: apiEndpointInput},
+                            headers: {
+                                "Content-Type": "application/json", // Set the appropriate content type
+                            },
+                        }
+                    );
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+
+                    // Process the data and display it in the resultDiv
+                    resultDiv.innerHTML = JSON.stringify(data, null, 2);
+                } catch (error) {
+                    resultDiv.innerHTML = `Error: ${error.message}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
